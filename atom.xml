@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://seerline.org/"/>
-  <updated>2018-04-17T09:22:24.681Z</updated>
+  <updated>2018-04-17T09:38:34.850Z</updated>
   <id>http://seerline.org/</id>
   
   <author>
@@ -17,13 +17,20 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>init</title>
-    <link href="http://seerline.org/news/2018/04/12/init/"/>
-    <id>http://seerline.org/news/2018/04/12/init/</id>
+    <title>Hello ClChart</title>
+    <link href="http://seerline.org/news/2018/04/12/Hello-ClChart/"/>
+    <id>http://seerline.org/news/2018/04/12/Hello-ClChart/</id>
     <published>2018-04-12T00:00:00.000Z</published>
-    <updated>2018-04-17T09:22:24.681Z</updated>
+    <updated>2018-04-17T09:38:34.850Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Descriptions"><a href="#Descriptions" class="headerlink" title="Descriptions"></a>Descriptions</h1><p>A fast, simple and cross-platform stock chart library created using canvas.</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Descriptions&quot;&gt;&lt;a href=&quot;#Descriptions&quot; class=&quot;headerlink&quot; title=&quot;Descriptions&quot;&gt;&lt;/a&gt;Descriptions&lt;/h1&gt;&lt;p&gt;A fast, simple and cross-platf
+      
     
     </summary>
     

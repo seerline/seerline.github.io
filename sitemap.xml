@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://seerline.org/news/2018/04/12/Hello-ClChart/</loc>
+    
+    <lastmod>2018-04-17T09:38:34.850Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://seerline.org/zh-cn/docs/setup.html</loc>
     
     <lastmod>2018-04-17T09:22:24.709Z</lastmod>
@@ -23,14 +30,14 @@
   </url>
   
   <url>
-    <loc>http://seerline.org/zh-cn/api/index.html</loc>
+    <loc>http://seerline.org/zh-cn/api/helper.html</loc>
     
     <lastmod>2018-04-17T09:22:24.708Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seerline.org/zh-cn/api/helper.html</loc>
+    <loc>http://seerline.org/zh-cn/api/index.html</loc>
     
     <lastmod>2018-04-17T09:22:24.708Z</lastmod>
     
@@ -72,6 +79,13 @@
   </url>
   
   <url>
+    <loc>http://seerline.org/api/helper.html</loc>
+    
+    <lastmod>2018-04-17T09:22:24.682Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://seerline.org/docs/index.html</loc>
     
     <lastmod>2018-04-17T09:22:24.682Z</lastmod>
@@ -86,21 +100,7 @@
   </url>
   
   <url>
-    <loc>http://seerline.org/api/helper.html</loc>
-    
-    <lastmod>2018-04-17T09:22:24.682Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://seerline.org/about/index.html</loc>
-    
-    <lastmod>2018-04-17T09:22:24.681Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seerline.org/news/2018/04/12/init/</loc>
     
     <lastmod>2018-04-17T09:22:24.681Z</lastmod>
     
