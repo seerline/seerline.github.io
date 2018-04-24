@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>开始绘图 | Seerline</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://seerline.org/zh-cn/docs/paint_chart.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="http://seerline.org/docs/paint_chart.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="http://seerline.org/zh-cn/docs/paint_chart.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" href="/icon/apple-touch-startup-image-320x460.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="/icon/apple-touch-startup-image-640x920.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/icon/apple-touch-startup-image-640x1096.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="/icon/apple-touch-startup-image-750x1294.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)" href="/icon/apple-touch-startup-image-1182x2208.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)" href="/icon/apple-touch-startup-image-1242x2148.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" href="/icon/apple-touch-startup-image-748x1024.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/icon/apple-touch-startup-image-1496x2048.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="/icon/apple-touch-startup-image-768x1004.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/icon/apple-touch-startup-image-1536x2008.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="228x228" href="/icon/coast-228x228.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+  <link rel="manifest" href="/icon/manifest.json">
+  <link rel="shortcut icon" href="/icon/favicon.ico">
+  <link rel="yandex-tableau-widget" href="/icon/yandex-browser-manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="seerline chart">
+  <meta name="application-name" content="seerline chart">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="msapplication-TileColor" content="#020307">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <meta name="msapplication-config" content="/icon/browserconfig.xml">
+  <meta name="theme-color" content="#020307">
+  <meta name="generator" content="seerline 3.7.1">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/build/css/seer-69ebcfe459.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Seerline">
+  <!-- Open Graph -->
+  <meta name="description" content="初始化项目 创建一个目录clchart-demo 创建demo01.html文件 创建js目录用来存放javascript文件 下载我们已经准备好的股票数据stockdata，将其放在js目录下面 将上一节我们下载的clchart.js复制到js目录下面  现在我们的文件结构为clchart-demo├── js|   ├── stockdata.js|   └── clchart.js└── d">
+<meta name="keywords" content="chart, canvas, stock chart, fast, simple, cross-platform, configurable">
+<meta property="og:type" content="website">
+<meta property="og:title" content="开始绘图">
+<meta property="og:url" content="http://seerline.org/zh-cn/docs/paint_chart.html">
+<meta property="og:site_name" content="Seerline">
+<meta property="og:description" content="初始化项目 创建一个目录clchart-demo 创建demo01.html文件 创建js目录用来存放javascript文件 下载我们已经准备好的股票数据stockdata，将其放在js目录下面 将上一节我们下载的clchart.js复制到js目录下面  现在我们的文件结构为clchart-demo├── js|   ├── stockdata.js|   └── clchart.js└── d">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2018-04-24T01:16:50.744Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="开始绘图">
+<meta name="twitter:description" content="初始化项目 创建一个目录clchart-demo 创建demo01.html文件 创建js目录用来存放javascript文件 下载我们已经准备好的股票数据stockdata，将其放在js目录下面 将上一节我们下载的clchart.js复制到js目录下面  现在我们的文件结构为clchart-demo├── js|   ├── stockdata.js|   └── clchart.js└── d">
+  <!-- Google Analytics -->
+  
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">ClChart</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-cn/docs/" class="main-nav-link">文档</a><a href="/zh-cn/api/" class="main-nav-link">API</a><a href="/news/" class="main-nav-link">新闻</a>
+      <a href="https://github.com/seerline/clchart" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/paint_chart.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">开始绘图</h1>
+                <a href="https://github.com/hexojs/site/edit/master/source/zh-cn/docs/paint_chart.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="初始化项目" class="article-heading"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目<a class="article-anchor" href="#初始化项目" aria-hidden="true"></a></h2><ul>
+<li>创建一个目录<code>clchart-demo</code></li>
+<li>创建<code>demo01.html</code>文件</li>
+<li>创建<code>js</code>目录用来存放<code>javascript</code>文件</li>
+<li>下载我们已经准备好的股票数据<a href="https://seerline.github.io/clchart/stockdata.js" target="_blank" rel="noopener">stockdata</a>，将其放在<code>js</code>目录下面</li>
+<li>将上一节我们下载的<code>clchart.js</code>复制到<code>js</code>目录下面</li>
+</ul>
+<p>现在我们的文件结构为<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">clchart-demo</span><br><span class="line">├── js</span><br><span class="line">|   ├── stockdata.js</span><br><span class="line">|   └── clchart.js</span><br><span class="line">└── demo01.html</span><br></pre></td></tr></table></figure></p>
+<h2 id="初始化HTML文件" class="article-heading"><a href="#初始化HTML文件" class="headerlink" title="初始化HTML文件"></a>初始化HTML文件<a class="article-anchor" href="#初始化HTML文件" aria-hidden="true"></a></h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>ClChat Demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    * &#123;</span></span><br><span class="line"><span class="undefined">      margin: 0;</span></span><br><span class="line"><span class="undefined">      padding: 0;</span></span><br><span class="line"><span class="undefined">      -webkit-box-sizing: border-box;</span></span><br><span class="line"><span class="undefined">              box-sizing: border-box;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    canvas &#123;</span></span><br><span class="line"><span class="undefined">      -moz-user-select: none;</span></span><br><span class="line"><span class="undefined">      -webkit-user-select: none;</span></span><br><span class="line"><span class="undefined">      -ms-user-select: none;</span></span><br><span class="line"><span class="undefined">      user-select: none;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    html, body, .container &#123;</span></span><br><span class="line"><span class="undefined">      height: 100%;</span></span><br><span class="line"><span class="undefined">      width: 100%;</span></span><br><span class="line"><span class="undefined">      background-color: #3b3b42;</span></span><br><span class="line"><span class="undefined">      color: #f5f5f5;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    .container &#123;</span></span><br><span class="line"><span class="undefined">      position: relative;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    .chart-canvas &#123;</span></span><br><span class="line"><span class="undefined">      heigth: 100%;</span></span><br><span class="line"><span class="undefined">      width: 100%;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    #cursorChart &#123;</span></span><br><span class="line"><span class="undefined">      position: absolute;</span></span><br><span class="line"><span class="undefined">      top: 0;</span></span><br><span class="line"><span class="undefined">      left: 0;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">class</span>=<span class="string">"chart-canvas"</span> <span class="attr">id</span>=<span class="string">"myChart"</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"600"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">class</span>=<span class="string">"chart-canvas"</span> <span class="attr">id</span>=<span class="string">"cursorChart"</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"600"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./js/stockdata.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./js/clchart.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="开始画图" class="article-heading"><a href="#开始画图" class="headerlink" title="开始画图"></a>开始画图<a class="article-anchor" href="#开始画图" aria-hidden="true"></a></h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="comment">// 获取页面中的main canvas以及cursor canvas</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">// mainCanvas 用来绘制主图</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">// cursorCanvas 用来绘制十字光标</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> mainCanvas = <span class="built_in">document</span>.getElementById(<span class="string">'myChart'</span>)</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> mainCtx = mainCanvas.getContext(<span class="string">'2d'</span>)</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> cursorCanvas = <span class="built_in">document</span>.getElementById(<span class="string">'cursorChart'</span>)</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> cursorCtx = cursorCanvas.getContext(<span class="string">'2d'</span>)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="comment">// 定于绘图的配置，并且把mainCanvas及cursorCanvas传入做初始化</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> syscfg = &#123;</span></span><br><span class="line"><span class="javascript">    scale: <span class="built_in">window</span>.devicePixelRatio,</span></span><br><span class="line"><span class="javascript">    axisPlatform: <span class="string">'web'</span>, <span class="comment">// 'phone' | 'web'</span></span></span><br><span class="line"><span class="undefined">    mainCanvas: &#123;</span></span><br><span class="line"><span class="undefined">      canvas: mainCanvas,</span></span><br><span class="line"><span class="undefined">      context: mainCtx</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    cursorCanvas: &#123;</span></span><br><span class="line"><span class="undefined">      canvas: cursorCanvas,</span></span><br><span class="line"><span class="undefined">      context: cursorCtx</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="javascript">  <span class="comment">// 创建单一股票Chart实例</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> Chart = ClChart.createSingleChart(syscfg)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="comment">// 清除画布，及数据</span></span></span><br><span class="line"><span class="undefined">  Chart.clear()</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> code = <span class="string">'SH000001'</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">// 数据初始化</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">// 初始化当前交易日期</span></span></span><br><span class="line"><span class="undefined">  Chart.initData(20180413, ClChart.DEF_DATA.STOCK_TRADETIME)</span></span><br><span class="line"><span class="javascript">  <span class="comment">// 初始化股票信息，具体字段配置可以查看关于数据层，各种数据结构的定义</span></span></span><br><span class="line"><span class="javascript">  Chart.setData(<span class="string">'INFO'</span>, ClChart.DEF_DATA.FIELD_INFO, getMockData(code, <span class="string">'INFO'</span>))</span></span><br><span class="line"><span class="javascript">  Chart.setData(<span class="string">'MIN'</span>, ClChart.DEF_DATA.FIELD_MIN, getMockData(code, <span class="string">'MIN'</span>))</span></span><br><span class="line"><span class="javascript">  Chart.setData(<span class="string">'TICK'</span>, ClChart.DEF_DATA.FIELD_TICK, getMockData(code, <span class="string">'TICK'</span>))</span></span><br><span class="line"><span class="javascript">  Chart.setData(<span class="string">'NOW'</span>, ClChart.DEF_DATA.FIELD_NOW, getMockData(code, <span class="string">'NOW'</span>))</span></span><br><span class="line"><span class="javascript">  <span class="comment">// 配置画布各个区域的大小</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">// 主图高度</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">let</span> mainHeight = canvas.height * <span class="number">2</span> / <span class="number">3</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">let</span> mainWidth = canvas.width</span></span><br><span class="line"><span class="javascript">  <span class="comment">// 设置画布区域布局</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> mainLayoutCfg = &#123;</span></span><br><span class="line"><span class="undefined">    layout: ClChart.DEF_CHART.CHART_LAYOUT,</span></span><br><span class="line"><span class="undefined">    config: ClChart.DEF_CHART.CHART_NOW,</span></span><br><span class="line"><span class="undefined">    rectMain: &#123;</span></span><br><span class="line"><span class="undefined">      left: 0,</span></span><br><span class="line"><span class="undefined">      top: 0,</span></span><br><span class="line"><span class="undefined">      width: mainWidth,</span></span><br><span class="line"><span class="undefined">      height: mainHeight</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> mainChart = Chart.createChart(<span class="string">'MIN'</span>, <span class="string">'CHART.LINE'</span>, mainLayoutCfg, <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;&#125;)</span></span><br><span class="line"><span class="javascript">  Chart.bindData(mainChart, <span class="string">'MIN'</span>)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> volumeLoyoutCfg = &#123;</span></span><br><span class="line"><span class="undefined">    layout: ClChart.DEF_CHART.CHART_LAYOUT,</span></span><br><span class="line"><span class="undefined">    config: ClChart.DEF_CHART.CHART_NOWVOL,</span></span><br><span class="line"><span class="undefined">    rectMain: &#123;</span></span><br><span class="line"><span class="undefined">      left: 0,</span></span><br><span class="line"><span class="undefined">      top: mainHeight,</span></span><br><span class="line"><span class="undefined">      width: mainWidth,</span></span><br><span class="line"><span class="undefined">      height: canvas.height - mainHeight</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> volumeChart = Chart.createChart(<span class="string">'MINNOW'</span>, <span class="string">'CHART.LINE'</span>, volumeLoyoutCfg, <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;&#125;)</span></span><br><span class="line"><span class="javascript">  Chart.bindData(volumeChart, <span class="string">'MIN'</span>)</span></span><br><span class="line"><span class="javascript">  <span class="comment">// 执行绘图</span></span></span><br><span class="line"><span class="undefined">  Chart.onPaint()</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>现在我们已经完成了一个简单的指数分时图的绘制了。可以查看<a href="https://seerline.github.io/guide/demo01.html" target="_blank" rel="noopener">demo01</a></p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-04-24T01:16:50.744Z" itemprop="dateModified">上次更新：2018-04-24</time>
+                <a href="install.html" class="article-footer-prev" title="安装"><i class="fa fa-chevron-left"></i><span>上一页</span></a>
+              </footer>
+              
+<section id="comments">
+  <div id="disqus_thread"></div>
+</section>
+<script>
+  var disqus_shortname = 'seerline';
+  var disqus_url = 'http://seerline.org/zh-cn/docs/paint_chart.html';
+  var disqus_title = "开始绘图";
+  var disqus_config = function(){
+    this.language = 'zh';
+  };
+  (function(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化项目"><span class="toc-text">初始化项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化HTML文件"><span class="toc-text">初始化HTML文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开始画图"><span class="toc-text">开始画图</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">新手指南</strong><a href="index.html" class="sidebar-link">ClChart是什么？</a><a href="install.html" class="sidebar-link">安装</a><a href="paint_chart.html" class="sidebar-link current">画图</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2018 <a href="https://github.com/seerline/clchart/graphs/contributors" target="_blank">Seerline</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/seerline/clchart" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-cn/docs/" class="mobile-nav-link">文档</a><a href="/zh-cn/api/" class="mobile-nav-link">API</a><a href="/news/" class="mobile-nav-link">新闻</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/seerline/clchart" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">新手指南</strong><a href="index.html" class="mobile-nav-link">ClChart是什么？</a><a href="install.html" class="mobile-nav-link">安装</a><a href="paint_chart.html" class="mobile-nav-link current">画图</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/paint_chart.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<script src="/build/js/main-39ca7b86df.js"></script>
+
+<!-- Algolia -->
+
+
+</body>
+</html>
