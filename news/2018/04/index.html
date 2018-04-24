@@ -123,7 +123,7 @@
 <h2 id="为什么需要ClChart" class="article-heading"><a href="#为什么需要ClChart" class="headerlink" title="为什么需要ClChart"></a>为什么需要ClChart<a class="article-anchor" href="#为什么需要ClChart" aria-hidden="true"></a></h2><p>在现有的开源库中，不乏有非常不错的开源图表库，通用图表库有<a href="https://github.com/chartjs/Chart.js" target="_blank" rel="noopener">chartjs</a>,<a href="https://github.com/apache/incubator-echarts" target="_blank" rel="noopener">echart</a>,<a href="https://github.com/highcharts/highcharts" target="_blank" rel="noopener">highchart</a>等,这些图表库具有非常完备的图表类型以及强大的绘图能力及速度。而针对股票等有价证劵特定的图表库有：<a href="https://github.com/andredumas/techan.js" target="_blank" rel="noopener">techanjs</a>和<a href="https://github.com/highcharts/highcharts" target="_blank" rel="noopener">highcharts/highstock</a>等。</p>
 <p>但是在我们开发股票类型的绘图时，我们需要跨平台支持，其包含pc、webApp、React Native和Weex。一开始我们考虑使用基于<code>svg</code>绘图的<a href="https://github.com/andredumas/techan.js" target="_blank" rel="noopener">techanjs</a>之上进行继续开发使用，然后在React Native中通过webview来加载html文件，通过<code>window.document.addEventListener(&#39;message&#39;, function(e) {})</code>以及<code>window.postMessage</code>来完成html与React Natve来通讯绘图，但是使用实际的使用过程中，在一些性能较差的android设备上，特别是android版本小于4.4以下的android系统在绘图大数据量图标以及用户交互的时候表现的特别的糟糕，经常发生卡顿。</p>
 <h4 id="以下为我们在使用过程中对各画图库在绘制股票类型的K线图做的一个比较" class="article-heading"><a href="#以下为我们在使用过程中对各画图库在绘制股票类型的K线图做的一个比较" class="headerlink" title="以下为我们在使用过程中对各画图库在绘制股票类型的K线图做的一个比较"></a>以下为我们在使用过程中对各画图库在绘制股票类型的K线图做的一个比较<a class="article-anchor" href="#以下为我们在使用过程中对各画图库在绘制股票类型的K线图做的一个比较" aria-hidden="true"></a></h4><blockquote>
-<p>以下所做的比较均为使用这些图表库来绘制有价证劵类型的K线图的绘图能力的比较。</p>
+<p>以下所做的比较均为使用这些图表库来绘制有价证劵类型的K线图的绘图能力的比较,数据为主观判定</p>
 </blockquote>
 <table>
 <thead>
@@ -167,7 +167,15 @@
 <td>☆☆☆☆</td>
 <td>☆☆☆☆</td>
 <td>☆☆☆☆</td>
-<td>☆☆☆☆</td>
+<td>☆☆☆☆☆</td>
+</tr>
+<tr>
+<td>跨平台</td>
+<td>☆☆☆</td>
+<td>☆☆☆</td>
+<td>☆☆</td>
+<td>☆</td>
+<td>☆☆☆☆☆</td>
 </tr>
 </tbody>
 </table>
@@ -183,7 +191,11 @@
 <h3 id="可扩展数据层" class="article-heading"><a href="#可扩展数据层" class="headerlink" title="可扩展数据层"></a>可扩展数据层<a class="article-anchor" href="#可扩展数据层" aria-hidden="true"></a></h3><p><code>ClChart</code>实现独立的数据层，其能对数据进行预处理，缓存的功能，数据通过字段<code>FIELD</code>定义以及读取，用户可以方便自定义数据字段来快速与现有的数据进行整合使用。</p>
 <h3 id="自定义公式系统" class="article-heading"><a href="#自定义公式系统" class="headerlink" title="自定义公式系统"></a>自定义公式系统<a class="article-anchor" href="#自定义公式系统" aria-hidden="true"></a></h3><p><code>ClChart</code>支持自定义公式系统，开发者和用户均可在使用过程中可以自定义公式进行绘图。</p>
 <h3 id="插件" class="article-heading"><a href="#插件" class="headerlink" title="插件"></a>插件<a class="article-anchor" href="#插件" aria-hidden="true"></a></h3><p><code>ClChart</code>支持自定绘图插件，现已实现插件有数据标签类型</p>
-<p>您可以在pc以及手机设备商打开查看<a href="https://seerline.github.io/clchart/" target="_blank" rel="noopener">demo</a>，快速体验。</p>
+<h2 id="ClChart项目地址、文档及测试用例" class="article-heading"><a href="#ClChart项目地址、文档及测试用例" class="headerlink" title="ClChart项目地址、文档及测试用例"></a>ClChart项目地址、文档及测试用例<a class="article-anchor" href="#ClChart项目地址、文档及测试用例" aria-hidden="true"></a></h2><p>clchart项目地址：<a href="https://github.com/seerline/clchart" target="_blank" rel="noopener">github</a></p>
+<p><a href="https://seerline.github.io/zh-cn" target="_blank" rel="noopener">中文文档</a></p>
+<p><a href="https://seerline.github.io" target="_blank" rel="noopener">English docs</a></p>
+<p><a href="https://seerline.github.io/clchart/" target="_blank" rel="noopener">HTML5 Demo</a> 可在手机及PC分别打开体验</p>
+<p><a href="https://github.com/seerline/react-native-clchart-demo" target="_blank" rel="noopener">React Native Demo</a></p>
 
   </div>
   
