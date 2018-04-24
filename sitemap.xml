@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://seerline.org/docs/paint_chart.html</loc>
+    
+    <lastmod>2018-04-24T05:42:37.606Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seerline.org/zh-cn/docs/paint_chart.html</loc>
+    
+    <lastmod>2018-04-24T05:41:59.105Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seerline.org/news/2018/04/12/Hello-ClChart/</loc>
+    
+    <lastmod>2018-04-24T05:39:54.512Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://seerline.org/api/index.html</loc>
     
     <lastmod>2018-04-24T03:08:15.353Z</lastmod>
@@ -12,13 +33,6 @@
     <loc>http://seerline.org/zh-cn/api/index.html</loc>
     
     <lastmod>2018-04-24T03:07:48.794Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seerline.org/docs/paint_chart.html</loc>
-    
-    <lastmod>2018-04-24T03:05:51.781Z</lastmod>
     
   </url>
   
@@ -44,13 +58,6 @@
   </url>
   
   <url>
-    <loc>http://seerline.org/zh-cn/docs/paint_chart.html</loc>
-    
-    <lastmod>2018-04-24T01:16:50.744Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://seerline.org/zh-cn/docs/install.html</loc>
     
     <lastmod>2018-04-23T09:32:44.687Z</lastmod>
@@ -68,13 +75,6 @@
     <loc>http://seerline.org/zh-cn/index.html</loc>
     
     <lastmod>2018-04-23T08:43:00.501Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seerline.org/news/2018/04/12/Hello-ClChart/</loc>
-    
-    <lastmod>2018-04-17T09:38:34.850Z</lastmod>
     
   </url>
   

@@ -113,13 +113,28 @@
   <header class="article-header">
     
       <h1>
-        <a href="/news/2018/04/12/Hello-ClChart/" class="article-title" itemprop="name">Hello ClChart</a>
+        <a href="/news/2018/04/12/Hello-ClChart/" class="article-title" itemprop="name">一个跨平台的canvas股票图表库--clchart</a>
       </h1>
     
     <a href="/news/2018/04/12/Hello-ClChart/" class="article-date"><time datetime="2018-04-12T00:00:00.000Z">2018-04-12</time></a>
   </header>
   <div class="article-content" itemprop="articleBody">
-    <h1 id="Descriptions" class="article-heading"><a href="#Descriptions" class="headerlink" title="Descriptions"></a>Descriptions<a class="article-anchor" href="#Descriptions" aria-hidden="true"></a></h1><p>A fast, simple and cross-platform stock chart library created using canvas.</p>
+    <h2 id="什么是-ClChart？" class="article-heading"><a href="#什么是-ClChart？" class="headerlink" title="什么是 ClChart？"></a>什么是 ClChart？<a class="article-anchor" href="#什么是-ClChart？" aria-hidden="true"></a></h2><p><a href="https://github.com/seerline/clchart" target="_blank" rel="noopener">ClChart</a>是一个基于canvas创建的快速、简单和跨平台的股票数据可视化开源项目。支持PC、手机web以及<a href="https://github.com/facebook/react-native" target="_blank" rel="noopener">React Native</a>和<a href="https://github.com/apache/incubator-weex" target="_blank" rel="noopener">Weex</a>等手机设备，具有良好的适配性及绘图性能。在<a href="https://github.com/facebook/react-native" target="_blank" rel="noopener">React Native</a>和<a href="https://github.com/apache/incubator-weex" target="_blank" rel="noopener">Weex</a>上通过使用开源项目<a href="https://github.com/alibaba/GCanvas" target="_blank" rel="noopener">GCanvas</a>达到在android和ios上实现原生绘图。</p>
+<h2 id="为什么需要ClChart" class="article-heading"><a href="#为什么需要ClChart" class="headerlink" title="为什么需要ClChart"></a>为什么需要ClChart<a class="article-anchor" href="#为什么需要ClChart" aria-hidden="true"></a></h2><p>在现有的开源库中，不乏有非常不错的开源图表库，通用图表库有<a href="https://github.com/chartjs/Chart.js" target="_blank" rel="noopener">chartjs</a>,<a href="https://github.com/apache/incubator-echarts" target="_blank" rel="noopener">echart</a>,<a href="https://github.com/highcharts/highcharts" target="_blank" rel="noopener">highchart</a>等,这些图表库具有非常完备的图表类型以及强大的绘图能力及速度。而针对股票等有价证劵特定的图表库有：<a href="https://github.com/andredumas/techan.js" target="_blank" rel="noopener">techanjs</a>和<a href="https://github.com/highcharts/highcharts" target="_blank" rel="noopener">highcharts/highstock</a>等。</p>
+<p>但是在我们开发股票类型的绘图时，我们需要跨平台支持，其包含pc、webApp、React Native和Weex。一开始我们考虑使用基于<code>svg</code>绘图的<a href="https://github.com/andredumas/techan.js" target="_blank" rel="noopener">techanjs</a>之上进行继续开发使用，然后在React Native中通过webview来加载html文件，通过window.onMessage以及window.postMessage来完成html与React Natve来通讯绘图，但是使用实际的使用过程中，在一些性能较差的android设备上，特别是android版本小于4.4一下的android系统在绘图大数据量图标以及用户交互的时候表现的特别的糟糕，经常发生卡顿。</p>
+<h2 id="ClChart设计目标" class="article-heading"><a href="#ClChart设计目标" class="headerlink" title="ClChart设计目标"></a>ClChart设计目标<a class="article-anchor" href="#ClChart设计目标" aria-hidden="true"></a></h2><p>采用<code>canvas</code>开发一个具有<strong>高效</strong>、<strong>跨平台</strong>的<strong>专业股票图表库📈</strong></p>
+<p>具有能兼容<a href="https://github.com/alibaba/GCanvas" target="_blank" rel="noopener">GCanvas</a>提供的<code>canvas</code>接口，实现在<a href="https://github.com/facebook/react-native" target="_blank" rel="noopener">React Native</a>和<a href="https://github.com/apache/incubator-weex" target="_blank" rel="noopener">Weex</a>上达到原生绘图，并且在针对股票市场多种的公式系统能过以插件的形式进行水平扩展，对于有特殊需求的用户，能够提供自定义插件及数据结构的能力。</p>
+<h2 id="ClChart开发与实现" class="article-heading"><a href="#ClChart开发与实现" class="headerlink" title="ClChart开发与实现"></a>ClChart开发与实现<a class="article-anchor" href="#ClChart开发与实现" aria-hidden="true"></a></h2><h3 id="构建开发环境" class="article-heading"><a href="#构建开发环境" class="headerlink" title="构建开发环境"></a>构建开发环境<a class="article-anchor" href="#构建开发环境" aria-hidden="true"></a></h3><ul>
+<li style="list-style: none"><input type="checkbox" checked> 使用eslint实现代码规范</li>
+<li style="list-style: none"><input type="checkbox" checked> 使用webpack来实现代码打包</li>
+<li style="list-style: none"><input type="checkbox" checked> 编写示例<a href="https://seerline.github.io/clchart/" target="_blank" rel="noopener">demo</a></li>
+<li style="list-style: none"><input type="checkbox"> 使用karma以及mocha编写代码测试(进行中…)</li>
+</ul>
+<h3 id="双层canvas，主次图层分离，高效绘图" class="article-heading"><a href="#双层canvas，主次图层分离，高效绘图" class="headerlink" title="双层canvas，主次图层分离，高效绘图"></a>双层canvas，主次图层分离，高效绘图<a class="article-anchor" href="#双层canvas，主次图层分离，高效绘图" aria-hidden="true"></a></h3><p>在研究<a href="https://tradingview.com" target="_blank" rel="noopener">tradingview</a>的绘图程序时，我们发现其为了达到快速重绘十字光标等辅助线时，使用双层<code>canvas</code>分离十字光标(等辅助线)与主图层的绘制，大大减小快速移动十字光标时带来的多余的绘图计算。使得在低版本<code>android</code>手机设备和webApp上也能有流畅的用户体验</p>
+<h3 id="可扩展数据层" class="article-heading"><a href="#可扩展数据层" class="headerlink" title="可扩展数据层"></a>可扩展数据层<a class="article-anchor" href="#可扩展数据层" aria-hidden="true"></a></h3><p><code>ClChart</code>实现独立的数据层，其能对数据进行预处理，缓存的功能，数据通过字段<code>FIELD</code>定义以及读取，用户可以方便自定义数据字段来快速与现有的数据进行整合使用。</p>
+<h3 id="自定义公式系统" class="article-heading"><a href="#自定义公式系统" class="headerlink" title="自定义公式系统"></a>自定义公式系统<a class="article-anchor" href="#自定义公式系统" aria-hidden="true"></a></h3><p><code>ClChart</code>支持自定义公式系统，开发者和用户均可在使用过程中可以自定义公式进行绘图。</p>
+<h3 id="插件" class="article-heading"><a href="#插件" class="headerlink" title="插件"></a>插件<a class="article-anchor" href="#插件" aria-hidden="true"></a></h3><p><code>ClChart</code>支持自定绘图插件，现已实现插件有数据标签类型</p>
+<p>您可以在pc以及手机设备商打开查看<a href="https://seerline.github.io/clchart/" target="_blank" rel="noopener">demo</a>，快速体验。</p>
 
   </div>
   
