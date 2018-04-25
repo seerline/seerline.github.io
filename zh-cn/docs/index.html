@@ -67,7 +67,7 @@
 <meta property="og:site_name" content="Seerline">
 <meta property="og:description" content="欢迎使用 ClChart，本文档将帮助您快速上手。如果您在使用过程中遇到问题，请在 GitHub上提问。 什么是 ClChart？ClChart是一个基于canvas创建的快速、简单和跨平台的股票数据可视化开源项目。支持PC、手机web以及React Native和Weex等手机设备，具有良好的适配性及绘图性能。在React Native和Weex上通过使用开源项目GCanvas达到在androi">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-04-24T03:05:20.001Z">
+<meta property="og:updated_time" content="2018-04-25T01:45:03.016Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="指南">
 <meta name="twitter:description" content="欢迎使用 ClChart，本文档将帮助您快速上手。如果您在使用过程中遇到问题，请在 GitHub上提问。 什么是 ClChart？ClChart是一个基于canvas创建的快速、简单和跨平台的股票数据可视化开源项目。支持PC、手机web以及React Native和Weex等手机设备，具有良好的适配性及绘图性能。在React Native和Weex上通过使用开源项目GCanvas达到在androi">
@@ -124,18 +124,15 @@
               <div class="article-content" itemprop="articleBody">
                 <p>欢迎使用 ClChart，本文档将帮助您快速上手。如果您在使用过程中遇到问题，请在 <a href="https://github.com/seerline/clchart/issues" target="_blank" rel="noopener">GitHub</a>上提问。</p>
 <h2 id="什么是-ClChart？" class="article-heading"><a href="#什么是-ClChart？" class="headerlink" title="什么是 ClChart？"></a>什么是 ClChart？<a class="article-anchor" href="#什么是-ClChart？" aria-hidden="true"></a></h2><p>ClChart是一个基于canvas创建的快速、简单和跨平台的股票数据可视化开源项目。支持PC、手机web以及<a href="https://github.com/facebook/react-native" target="_blank" rel="noopener">React Native</a>和<a href="https://github.com/apache/incubator-weex" target="_blank" rel="noopener">Weex</a>等手机设备，具有良好的适配性及绘图性能。在<a href="https://github.com/facebook/react-native" target="_blank" rel="noopener">React Native</a>和<a href="https://github.com/apache/incubator-weex" target="_blank" rel="noopener">Weex</a>上通过使用开源项目<a href="https://github.com/alibaba/GCanvas" target="_blank" rel="noopener">GCanvas</a>达到在android和ios上实现原生绘图。</p>
-<h2 id="设计思路" class="article-heading"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路<a class="article-anchor" href="#设计思路" aria-hidden="true"></a></h2><p>在现有的开源库中，不乏有非常不错的开源图表库，通用图表库有<a href="https://github.com/chartjs/Chart.js" target="_blank" rel="noopener">chartjs</a>,<a href="https://github.com/apache/incubator-echarts" target="_blank" rel="noopener">echart</a>,<a href="https://github.com/highcharts/highcharts" target="_blank" rel="noopener">highchart</a>等,这些图表库具有非常完备的图表类型以及强大的绘图能力及速度。股票等有价证劵特定的图表库有：<a href="https://github.com/andredumas/techan.js" target="_blank" rel="noopener">techanjs</a>（这个库作者已经不在维护）,<a href="https://github.com/highcharts/highcharts" target="_blank" rel="noopener">highcharts/highstock</a>（需要付费使用）等。</p>
-<p>在我们开发股票类型的绘图时我们需要跨平台支持，其包含pc、webApp、Android 和 ios。一开始我们考虑使用以<code>svg</code>来回图的<a href="https://github.com/apache/incubator-echarts" target="_blank" rel="noopener">echart</a>,但是在我们的使用过程中，发现在一些性能较差的android设备上，svg在绘制大量的图片时会特别的慢，当有用户交互的时候，卡顿十分严重。因此我们急需实现一个高效、跨平台的股票绘图库，经过在github的调研以及对我们日常经常使用到的<a href="https://tradingview.com" target="_blank" rel="noopener">tradingview</a>的探讨，我们决定自主实现一个股票绘图库。</p>
-<p>我们想要达到的目标是高效、跨平台、简单易用，可扩展，并且能兼容<a href="https://github.com/alibaba/GCanvas" target="_blank" rel="noopener">GCanvas</a>提供的接口实现在<a href="https://github.com/facebook/react-native" target="_blank" rel="noopener">React Native</a>和<a href="https://github.com/apache/incubator-weex" target="_blank" rel="noopener">Weex</a>上能原生绘图，并且在针对股票市场多种的公式系统能过以插件的形式进行水平扩展，对于有特殊需求的用户，能够提供自定义插件及数据结构的能力。</p>
-<h2 id="ClChart实现" class="article-heading"><a href="#ClChart实现" class="headerlink" title="ClChart实现"></a>ClChart实现<a class="article-anchor" href="#ClChart实现" aria-hidden="true"></a></h2><h3 id="双层canvas" class="article-heading"><a href="#双层canvas" class="headerlink" title="双层canvas"></a>双层canvas<a class="article-anchor" href="#双层canvas" aria-hidden="true"></a></h3><p><code>ClChart</code>使用双层<code>canvas</code>分离十字光标(等辅助线)与主图层的绘制，从而在快速重绘十字光标的过程中不会影响主图层绘图，实现在低版本<code>android</code>手机设备和webApp上也能有流畅的用户体验。</p>
-<h3 id="独立数据层" class="article-heading"><a href="#独立数据层" class="headerlink" title="独立数据层"></a>独立数据层<a class="article-anchor" href="#独立数据层" aria-hidden="true"></a></h3><p><code>ClChart</code>实现独立的数据层，其能对数据进行预处理，缓存的功能，数据通过字段<code>FIELD</code>定义以及读取，用户可以方便自定义数据字段来快速与现有的数据进行整合使用。</p>
-<h3 id="自定义公式系统" class="article-heading"><a href="#自定义公式系统" class="headerlink" title="自定义公式系统"></a>自定义公式系统<a class="article-anchor" href="#自定义公式系统" aria-hidden="true"></a></h3><p><code>ClChart</code>支持自定义公式系统，开发者和用户均可在使用过程中可以自定义公式进行绘图。</p>
-<h3 id="插件" class="article-heading"><a href="#插件" class="headerlink" title="插件"></a>插件<a class="article-anchor" href="#插件" aria-hidden="true"></a></h3><p><code>ClChart</code>支持自定绘图插件，现已实现插件有数据标签类型</p>
-<p>您可以在pc以及手机设备商打开查看<a href="https://seerline.github.io/clchart/" target="_blank" rel="noopener">demo</a>，快速体验。</p>
+<h2 id="ClChart项目地址、文档及测试用例" class="article-heading"><a href="#ClChart项目地址、文档及测试用例" class="headerlink" title="ClChart项目地址、文档及测试用例"></a>ClChart项目地址、文档及测试用例<a class="article-anchor" href="#ClChart项目地址、文档及测试用例" aria-hidden="true"></a></h2><p>clchart项目地址：<a href="https://github.com/seerline/clchart" target="_blank" rel="noopener">github</a></p>
+<p><a href="https://seerline.github.io/zh-cn" target="_blank" rel="noopener">中文文档</a></p>
+<p><a href="https://seerline.github.io" target="_blank" rel="noopener">English docs</a></p>
+<p><a href="https://seerline.github.io/clchart/" target="_blank" rel="noopener">HTML5 Demo</a> 可在手机及PC分别打开体验</p>
+<p><a href="https://github.com/seerline/react-native-clchart-demo" target="_blank" rel="noopener">React Native Demo</a></p>
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2018-04-24T03:05:20.001Z" itemprop="dateModified">上次更新：2018-04-24</time>
+                <time class="article-footer-updated" datetime="2018-04-25T01:45:03.016Z" itemprop="dateModified">上次更新：2018-04-25</time>
                 <a href="install.html" class="article-footer-next" title="安装"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -161,7 +158,7 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是-ClChart？"><span class="toc-text">什么是 ClChart？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计思路"><span class="toc-text">设计思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ClChart实现"><span class="toc-text">ClChart实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#双层canvas"><span class="toc-text">双层canvas</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#独立数据层"><span class="toc-text">独立数据层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义公式系统"><span class="toc-text">自定义公式系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插件"><span class="toc-text">插件</span></a></li></ol></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是-ClChart？"><span class="toc-text">什么是 ClChart？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ClChart项目地址、文档及测试用例"><span class="toc-text">ClChart项目地址、文档及测试用例</span></a></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>
