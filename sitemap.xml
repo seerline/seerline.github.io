@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://seerline.org/news/2018/05/04/Intro/</loc>
+    
+    <lastmod>2018-05-04T05:30:14.825Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://seerline.org/news/2018/04/12/Hello-ClChart/</loc>
     
     <lastmod>2018-04-25T02:09:05.925Z</lastmod>
@@ -16,14 +23,14 @@
   </url>
   
   <url>
-    <loc>http://seerline.org/docs/paint_chart.html</loc>
+    <loc>http://seerline.org/docs/install.html</loc>
     
     <lastmod>2018-04-25T01:45:26.207Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seerline.org/docs/install.html</loc>
+    <loc>http://seerline.org/docs/paint_chart.html</loc>
     
     <lastmod>2018-04-25T01:45:26.207Z</lastmod>
     
